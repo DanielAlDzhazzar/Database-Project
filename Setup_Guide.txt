@@ -5,4 +5,4 @@ Power it up and go to http://localhost/phpMyAdmin5
 Get banksys.sql file from DataBase folder and export it to phpMyAdmin
 Open project in IDE of your choice, IMPORTANT: download all neccessary extensions(java, php) or download them manualy
 Start from index.php in HTML folder
-User guide is on github
+User guide is on github in README.TXT
