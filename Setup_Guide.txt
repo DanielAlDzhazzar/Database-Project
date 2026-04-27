@@ -1,0 +1,8 @@
+To get it working:
+Download and extract project to local folder
+Download MAMP or any alternative to host local sql server(link: https://www.mamp.info/en/windows/)
+Power it up and go to http://localhost/phpMyAdmin5
+Get banksys.sql file from DataBase folder and export it to phpMyAdmin
+Open project in IDE of your choice, IMPORTANT: download all neccessary extensions(java, php) or download them manualy
+Start from index.php in HTML folder
+User guide is on github

@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 900px;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    color: #333;
+}
+
+.header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-right: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.nav a:hover {
+    background-color: #f0f0f0;
+}
+
+.content {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-item span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.profile-item p {
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-back {
+    background-color: #000000;
+    color: #fff;
+    margin-right: 0;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    background-color: #555;
+}
+
+.loan-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.loan-card p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.loan-card b {
+    color: #000;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fafafa;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+select:hover {
+    background-color: #f0f0f0;
+}
+
+select:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+}
+
+option {
+    background-color: #ffffff;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fafafa;
+    color: #333;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+input:hover {
+    background-color: #f0f0f0;
+}
+
+input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+}
