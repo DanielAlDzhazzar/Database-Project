@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $terms = getTerms($amount);
 
     //Gets user selected term
-    if (isset($_POST['sign']) && isset($_POST['agree'])) {
+    if (isset($_POST['sign'])) {
         $term = intval($_POST['term']);
         //Error if user selected wrong term
         if (!in_array($term, $terms)) {
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
 
         }
-        //Exception display
+            //Exception display
         catch (Exception $e) {
             $conn->rollback();
             die("Loan creation failed: " . $e->getMessage());
@@ -132,7 +132,7 @@ $conn->close();
             <!-- Message if customer has 3 active loans already -->
             <?php if ($loan_limit_reached): ?>
                 <p>You already have 3 active loans. You cannot take a new loan.</p>
-            <!-- Displays interest rate -->
+                <!-- Displays interest rate -->
             <?php elseif ($amount > 1000): ?>
                 <p>Interest rate: <?php echo $interest; ?>%</p>
                 <!-- Selection of terms from provided -->
@@ -144,6 +144,8 @@ $conn->close();
                         </option>
                     <?php endforeach; ?>
                 </select>
+
+                <input type="hidden" name="amount" value="<?php echo htmlspecialchars($amount); ?>">
 
                 <br><br>
                 <!-- Submit button -->

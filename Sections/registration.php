@@ -36,6 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,25}$/', $password)) {
         die("Password must be 8–25 chars, include upper, lower and number");
     }
+
+    //Password hashing
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
     $conn->begin_transaction();
 
     try {

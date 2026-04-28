@@ -41,6 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $year = "20" . $parts[1];
     $expiryDate = $year . "-" . $month . "-01";
 
+    //Data hashing
+    $cardNumber = password_hash($cardNumber, PASSWORD_DEFAULT);
+    $cvv = password_hash($cvv, PASSWORD_DEFAULT);
+
     $conn->begin_transaction();
 
     try {

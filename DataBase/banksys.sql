@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 27, 2026 at 04:01 AM
+-- Generation Time: Apr 28, 2026 at 04:40 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.3.1
 
@@ -31,9 +31,9 @@ CREATE TABLE `card` (
   `cardID` int(11) NOT NULL,
   `customerID` int(11) NOT NULL,
   `cardHolder` varchar(50) NOT NULL,
-  `cardNumber` varchar(20) DEFAULT NULL,
+  `cardNumber` varchar(255) DEFAULT NULL,
   `expiry` date DEFAULT NULL,
-  `cvv` varchar(5) DEFAULT NULL
+  `cvv` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `card` (
 --
 
 INSERT INTO `card` (`cardID`, `customerID`, `cardHolder`, `cardNumber`, `expiry`, `cvv`) VALUES
-(3, 2, 'Dani', '5544554455445544', '2039-01-01', '455');
+(4, 10, 'Tester', '$2y$10$mGF4QBzmSktICsOweODYW.kMKKUi9KIm9DlFDFP8oIjLij2px6X3O', '2030-02-01', '$2y$10$JEQF64N7wCFtvMxO1zbN2Oxi3nV12UrT2dXXKEJk1WGIuP2s2aa0m');
 
 -- --------------------------------------------------------
 
@@ -54,8 +54,8 @@ CREATE TABLE `customer` (
   `name` varchar(50) NOT NULL,
   `pnum` int(13) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `passport` varchar(10) NOT NULL,
-  `password` varchar(25) NOT NULL
+  `passport` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -63,13 +63,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customerID`, `name`, `pnum`, `email`, `passport`, `password`) VALUES
-(2, 'Daniel', 830813388, 'dan@gmail.com', 'GA123456', 'Gest1234'),
-(3, 'John', 837573344, 'john@gmail.com', 'JN123456', 'John1234'),
-(4, 'Pete', 830814456, 'pete@gmail.com', 'PE123456', 'Pete1234'),
-(5, 'Josh', 812922222, 'josh@gmail.com', 'JH123456', 'Josh1234'),
-(6, 'Danon', 983989546, 'danon@gmail.com', 'DN123456', 'Dano1234'),
-(8, 'bob', 831331333, 'bob@gmail.com', 'BB123456', 'Bobb1234'),
-(9, 'Kole', 931313344, 'kole@gmail.com', 'KL123456', 'Kile1234');
+(10, 'Test', 839998888, 'test@gmail.com', 'TE123456', '$2y$10$MMrjdHw.nRHnetYJgq2xUe3Vhrjy55XbmNImJXWjqXEGP8J7sSfDq');
 
 -- --------------------------------------------------------
 
@@ -95,7 +89,8 @@ INSERT INTO `loan` (`loanID`, `customerID`, `amount`, `interestRate`, `termMonth
 (1, 2, '50000.00', '2.00', 24, 'active', '2026-04-27 01:19:28'),
 (2, 2, '15000.00', '3.00', 12, 'active', '2026-04-27 01:21:51'),
 (3, 2, '3000.00', '5.00', 6, 'paid', '2026-04-27 01:24:59'),
-(4, 2, '41000.00', '3.00', 12, 'paid', '2026-04-27 02:48:24');
+(4, 2, '41000.00', '3.00', 12, 'paid', '2026-04-27 02:48:24'),
+(5, 10, '400000.00', '2.00', 24, 'paid', '2026-04-28 16:38:37');
 
 -- --------------------------------------------------------
 
@@ -123,7 +118,8 @@ INSERT INTO `payments` (`paymentID`, `loanID`, `amountPaid`, `paidAt`) VALUES
 (6, 3, '2000.00', '2026-04-27 02:20:52'),
 (7, 2, '450.00', '2026-04-27 02:23:26'),
 (8, 2, '14999.00', '2026-04-27 02:44:07'),
-(9, 4, '42230.00', '2026-04-27 02:53:33');
+(9, 4, '42230.00', '2026-04-27 02:53:33'),
+(10, 5, '408000.00', '2026-04-28 16:39:33');
 
 --
 -- Indexes for dumped tables
@@ -165,25 +161,25 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `card`
 --
 ALTER TABLE `card`
-  MODIFY `cardID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cardID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `loan`
 --
 ALTER TABLE `loan`
-  MODIFY `loanID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `loanID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

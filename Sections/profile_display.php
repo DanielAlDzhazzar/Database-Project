@@ -13,7 +13,7 @@ if (!isset($_COOKIE['user_cookie'])) {
 //Extracts user cookies
 $user_id = $_COOKIE['user_cookie'];
 //Prepares a statement
-$stmt = $conn->prepare("SELECT name, pnum, email, passport, password FROM customer WHERE customerID = ?");
+$stmt = $conn->prepare("SELECT name, pnum, email, passport FROM customer WHERE customerID = ?");
 if (!$stmt) {
     die("Prepare failed");
 }
@@ -49,7 +49,6 @@ $conn->close();
     <p><b>Phone number:</b> <?php echo $user['pnum']; ?></p>
     <p><b>Email:</b> <?php echo $user['email']; ?></p>
     <p><b>Passport:</b> <?php echo $user['passport']; ?></p>
-    <p><b>Password:</b> <?php echo $user['password']; ?></p>
 </div>
 </body>
 </html>

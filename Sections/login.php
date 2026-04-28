@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             throw new Exception("User not found");
         }
         //Error if password is not matching
-        if ($user['password'] !== $password) {
+        if (!password_verify($password, $user['password'])) {
             throw new Exception("Wrong password");
         }
 
